@@ -1,0 +1,10 @@
+use ("platzi_store")
+}
+
+db.products.drop()
+
+db.products.insertMany([{
+    
+
+
+}])

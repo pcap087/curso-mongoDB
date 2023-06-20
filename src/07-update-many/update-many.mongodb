@@ -1,0 +1,37 @@
+use("sample_training")
+
+//set agregar un atributo y su valor
+// db.zips.updateMany(
+//     //query
+//     {city: "CLEVELAND"},
+//     {
+//        $set: {
+//             nuevoAtributo: "test"
+//        } 
+//     }
+// )
+
+//rename: toma el atributo y cambia el nombre del campo No EL VALOR
+// db.zips.updateMany(
+//     //query
+//     {city: "CLEVELAND"},
+//     {
+//        $rename: {
+//             nuevoAtributo: "my_data"
+//        } 
+//     }
+// )
+
+
+//unset: sirve para eliminar el atributo
+db.zips.updateMany(
+    //query
+    {city: "CLEVELAND"},
+    {
+       $unset: {
+        my_data: ""
+       } 
+    }
+)
+
+db.zips.find({city:"CLEVELAND"})

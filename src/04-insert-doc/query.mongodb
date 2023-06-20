@@ -1,0 +1,74 @@
+use("platzi_store")
+
+// db.products.insertOne({
+//     "name": "Producto 2",
+//     "price": 1500
+// })
+
+// db.products.insertOne({
+//     "name": "Producto 2",
+//     "price": 3500
+// })
+
+// db.products.insertOne({
+//     "name": "Producto 3",
+//     "price": 4500
+// })
+
+//find: Selecciona y muestra documentos específicos de una colección.
+//db.products.find()
+
+//drop: borra la coleccion Elimina una colección. 
+// Si la colección se ha eliminado con éxito, el sistema lo confirma con “true”. 
+//Si hay un error, aparece como “false”.
+// db.products.drop()
+
+// db.products.insertMany([
+//     {
+//         _id: 1,
+//         name: "Producto 1",
+//         price: 500
+//     },
+//     {
+//         _id: 2,
+//         name: "Producto 2",
+//         price: 1500
+//     },
+//     {
+//         _id: 3,
+//         name: "Producto 3",
+//         price: 2000
+//     }
+// ])
+
+//db.products.find()
+//db.products.find({price:1500})
+
+//Actualizando un documento
+//operador $set : establecer el valor de un campo en un documento
+// db.products.updateOne(
+//     //query
+//     {_id:2},
+//     //change => operator 
+//     {
+//         $set: {
+//             name: 'Producto 8',
+//             tags: ['A','B','C']
+//         }
+//     }
+// );
+
+//el $inc sirve para incrementar el valor de un atributo
+db.products.updateOne(
+    //query
+    {_id:2},
+    //change => operator 
+    {
+        $inc: {
+            price: 2500
+        }
+    }
+);
+
+
+db.products.find()
