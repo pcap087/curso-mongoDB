@@ -1,0 +1,27 @@
+use("platzi_store")
+
+// Operadores:
+// $ne (not equal)
+// $eq (equal)
+// $pull (quitar datos de un array)
+// $gt (greater than - >)
+// $gte (greater than or equal - >=)
+// $lt (less than - <)
+// $lte (less than or equal - <=)
+
+// using $gt(>) & $gte(>=)
+
+//db.inventory.find({ qty: { $gte:20 } })
+
+//db.inventory.find( {qty: { $lte: 20 }} )
+
+// db.inventory.find({
+//     "item.code": "123",
+//     qty: {$gte: 20, $lte: 25}
+// })
+
+db.inventory.find({"item.name": { $regex: /a/}}) 
+
+
+
+7.588

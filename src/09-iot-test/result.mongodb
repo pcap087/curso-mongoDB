@@ -1,0 +1,42 @@
+use("platzi_store")
+
+// db.iot.insertOne({
+//     sensor: "A001",
+//     date: "2022-01-03",
+//     readings: [1212]
+// })
+
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03",
+//   }, {
+//     $push: {
+//       readings: 2323
+//     }
+// })
+
+//pop: sirve para eliminar elementos
+// db.iot.updateOne({
+//     sensor: "A001",
+//     date: "2022-01-03",
+//   }, {
+//     $pop: {
+//       readings: 1
+//     }
+// })
+
+
+//upsert: es la funcion que unifica inserta y actualizar
+//solo funciona con el updateOne (importante)
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-04",
+  }, {
+    $push: {
+      readings: 1234
+    }
+}, {
+    upsert: true
+})
+
+db.iot.find()

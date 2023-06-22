@@ -11,3 +11,4 @@ db.inventory.insertMany([
 ])
 
 db.inventory.find()
+
